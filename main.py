@@ -3,11 +3,16 @@ Nom: Nicolas Rodriguez
 Groupe: 406
 Description: Roche, Papier, Ciseaux
 """
+from abc import ABC
+
+from game_state import GameState
+from attack_animation import AttackType, AttackAnimation
+
 import arcade
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600
-SCREEN_TITLE = "Modèle de départ"
+SCREEN_TITLE = "Roche, Papier, Ciseaux"
 
 
 class Game(arcade.Window):
@@ -21,8 +26,15 @@ class Game(arcade.Window):
     def __init__(self, width, height, title):
         super().__init__(width, height, title)
 
-        arcade.set_background_color(arcade.color.AMAZON)
+        arcade.set_background_color(arcade.color.BLACK)
 
+        self.player_attack_type = {
+            AttackType.ROCK: False,
+            AttackType.PAPER: False,
+            AttackType.SCISSORS: False
+        }
+
+        self.sprites = arcade.SpriteList()
         # Si vous avez des listes de sprites, il faut les créer ici et les
         # initialiser à None.
 
@@ -70,40 +82,12 @@ class Game(arcade.Window):
         """
         pass
 
-    def on_key_release(self, key, key_modifiers):
-        """
-        Méthode invoquée à chaque fois que l'usager enlève son doigt d'une touche.
-        Paramètres:
-            - key: la touche relâchée
-            - key_modifiers: est-ce que l'usager appuie sur "shift" ou "ctrl" ?
-        """
-        pass
-
-    def on_mouse_motion(self, x, y, delta_x, delta_y):
-        """
-        Méthode invoquée lorsque le curseur de la souris se déplace dans la fenêtre.
-        Paramètres:
-            - x, y: les coordonnées de l'emplacement actuel de la sourir
-            - delta_X, delta_y: le changement (x et y) depuis la dernière fois que la méthode a été invoqué.
-        """
-        pass
-
     def on_mouse_press(self, x, y, button, key_modifiers):
         """
         Méthode invoquée lorsque l'usager clique un bouton de la souris.
         Paramètres:
             - x, y: coordonnées où le bouton a été cliqué
             - button: le bouton de la souris appuyé
-            - key_modifiers: est-ce que l'usager appuie sur "shift" ou "ctrl" ?
-        """
-        pass
-
-    def on_mouse_release(self, x, y, button, key_modifiers):
-        """
-        Méthode invoquée lorsque l'usager relâche le bouton cliqué de la souris.
-        Paramètres:
-            - x, y: coordonnées où le bouton a été relâché
-            - button: le bouton de la souris relâché
             - key_modifiers: est-ce que l'usager appuie sur "shift" ou "ctrl" ?
         """
         pass
