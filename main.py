@@ -26,7 +26,7 @@ class Game(arcade.Window):
     def __init__(self, width, height, title):
         super().__init__(width, height, title)
 
-        arcade.set_background_color(arcade.color.BLACK)
+        self.game_state = GameState
 
         self.player_attack_type = {
             AttackType.ROCK: False,
@@ -37,6 +37,38 @@ class Game(arcade.Window):
         self.sprites = arcade.SpriteList()
         # Si vous avez des listes de sprites, il faut les créer ici et les
         # initialiser à None.
+
+    def game_screen(self):
+        """
+        Déssine les écrans affichés (sans les sprites)
+        """
+        arcade.set_background_color(arcade.color.BLACK)
+
+        title = arcade.Text("Roche, Papier, Ciseaux", 40, 500, arcade.color.RUSTY_RED, 60)
+        title.draw()
+        arcade.draw_lbwh_rectangle_outline(80, 100, 80, 80, arcade.color.COPPER_RED)
+        arcade.draw_lbwh_rectangle_outline(180, 100, 80, 80, arcade.color.COPPER_RED)
+        arcade.draw_lbwh_rectangle_outline(280, 100, 80, 80, arcade.color.COPPER_RED)
+        arcade.draw_lbwh_rectangle_outline(600, 100, 80, 80, arcade.color.COPPER_RED)
+
+        if self.game_state.NOT_STARTED:
+            insruction_text = arcade.Text("Appuyez sur 'espace' pour commencer la partie", 100, 450, arcade.color.ANTI_FLASH_WHITE, 20)
+            insruction_text.draw()
+
+        elif self.game_state.ROUND_DONE:
+            insruction_text = arcade.Text("Appuyez sur 'espace' pour commencer la prochaine ronde", 100, 450,
+                                          arcade.color.ANTI_FLASH_WHITE, 20)
+            insruction_text.draw()
+
+            winner_text = arcade.Text(f"{} à gagné la ronde", 100, 425,
+                                      arcade.color.ANTI_FLASH_WHITE, 20)
+            winner_text.draw()
+
+        elif self.game_state.ROUND_ACTIVE:
+            pass
+
+        elif self.game_state.GAME_OVER:
+            pass
 
     def setup(self):
         """
@@ -52,12 +84,9 @@ class Game(arcade.Window):
         C'est la méthode que Arcade invoque à chaque "frame" pour afficher les éléments
         de votre jeu à l'écran.
         """
+        self.clear()
 
-        # Cette commande permet d'effacer l'écran avant de dessiner. Elle va dessiner l'arrière
-        # plan selon la couleur spécifié avec la méthode "set_background_color".
-        arcade.start_render()
-
-        # Invoquer la méthode "draw()" de vos sprites ici.
+        self.game_screen()
 
     def on_update(self, delta_time):
         """

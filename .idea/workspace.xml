@@ -6,103 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fe1689ec-46a0-486f-8a4b-26d08a945144" name="Changes" comment="123">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/Grille d'_valuation version 2024-2025.pdf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/RotateCookiesPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/app.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/cb=gapi(1).loaded_0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/cb=gapi.loaded_0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/cb=gapi.loaded_1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/default(1).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/default(2).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/default.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/googleapis.proxy.js.téléchargement" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/icon_3_pdf_x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/lazy.min.js.téléchargement" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/logo_drive_2020q4_color_1x_web_48dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/logo_meet_2020q4_color_1x_web_48dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/logo_square_rounded.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/m=_b,_tp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/m=_b,_tp(1)" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/m=hfcr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/proxy(1).html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/proxy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/rs=AA2YrTs9um7nM7ISNupfodds9-y7C7I4sA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/rs=AA2YrTu2DxB2kN0cQ82G6LVzDDDtDSuJSg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(10).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(11).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(12).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(13).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(14).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(15).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(16).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(17).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(18).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(19).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(20).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(21).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(22).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(3).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(4).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(5).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(6).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(7).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(8).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed(9).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/unnamed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/compy_files/x-python" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/Grille d'_valuation version 2024-2025.pdf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/RotateCookiesPage.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/app.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/cb=gapi(1).loaded_0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/cb=gapi.loaded_0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/cb=gapi.loaded_1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/default(1).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/default(2).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/default.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/googleapis.proxy.js.téléchargement" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/icon_3_pdf_x16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/lazy.min.js.téléchargement" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/logo_drive_2020q4_color_1x_web_48dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/logo_meet_2020q4_color_1x_web_48dp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/logo_square_rounded.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/m=_b,_tp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/m=_b,_tp(1)" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/m=hfcr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/proxy(1).html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/proxy.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/rs=AA2YrTs9um7nM7ISNupfodds9-y7C7I4sA" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/rs=AA2YrTu2DxB2kN0cQ82G6LVzDDDtDSuJSg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(1).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(10).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(11).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(12).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(13).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(14).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(15).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(16).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(17).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(18).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(19).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(2).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(20).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(21).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(22).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(3).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(4).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(5).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(6).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(7).png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(8).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed(9).jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/unnamed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/faceBeard_files/x-python" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/attack_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/attack_animation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,15 +46,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.attack_animation.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.attack_animation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
