@@ -34,9 +34,23 @@ class Game(arcade.Window):
             AttackType.SCISSORS: False
         }
 
-        self.sprites = arcade.SpriteList()
-        # Si vous avez des listes de sprites, il faut les créer ici et les
-        # initialiser à None.
+        self.player_icons = arcade.SpriteList()
+        self.face = arcade.Sprite("assets/faceBeard.png", scale=0.25)
+        self.player_icons.append(self.face)
+        self.com = arcade.Sprite("assets/compy.png", scale=1.2)
+        self.player_icons.append(self.com)
+
+        self.draw_rock = arcade.SpriteList()
+        self.rock = arcade.Sprite("assets/srock.png", scale=0.7)
+        self.draw_rock.append(self.rock)
+
+        self.draw_paper = arcade.SpriteList()
+        self.paper = arcade.Sprite("assets/spaper.png", scale=0.6)
+        self.draw_paper.append(self.paper)
+
+        self.draw_scissors = arcade.SpriteList()
+        self.scissors = arcade.Sprite("assets/sscissors.png", scale=0.6)
+        self.draw_scissors.append(self.scissors)
 
     def setup(self):
         """
