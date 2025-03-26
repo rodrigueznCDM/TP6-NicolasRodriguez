@@ -34,11 +34,11 @@ class Game(arcade.Window):
             AttackType.SCISSORS: False
         }
 
-        self.player_icons = arcade.SpriteList()
+        self.draw_icons = arcade.SpriteList()
         self.face = arcade.Sprite("assets/faceBeard.png", scale=0.25)
-        self.player_icons.append(self.face)
+        self.draw_icons.append(self.face)
         self.com = arcade.Sprite("assets/compy.png", scale=1.2)
-        self.player_icons.append(self.com)
+        self.draw_icons.append(self.com)
 
         self.draw_rock = arcade.SpriteList()
         self.rock = arcade.Sprite("assets/srock.png", scale=0.7)
@@ -49,8 +49,23 @@ class Game(arcade.Window):
         self.draw_paper.append(self.paper)
 
         self.draw_scissors = arcade.SpriteList()
-        self.scissors = arcade.Sprite("assets/sscissors.png", scale=0.6)
+        self.scissors = arcade.Sprite("assets/scissors.png", scale=0.6)
         self.draw_scissors.append(self.scissors)
+
+        self.face.center_x = 220
+        self.face.center_y = 225
+
+        self.com.center_x = 640
+        self.com.center_y = 225
+
+        self.rock.center_x = 130
+        self.rock.center_y = 150
+
+        self.paper.center_x = 330
+        self.paper.center_y = 140
+
+        self.scissors.center_x = 220
+        self.scissors.center_y = 140
 
     def setup(self):
         """
@@ -94,6 +109,14 @@ class Game(arcade.Window):
             win_text = arcade.Text(f"{self.winner} à gagné la partie", 100, 425,
                                    arcade.color.ANTI_FLASH_WHITE, 20)
             win_text.draw()
+
+        self.draw_icons.draw()
+
+        self.draw_rock.draw()
+
+        self.draw_paper.draw()
+
+        self.draw_scissors.draw()
 
     def on_update(self, delta_time):
         """
