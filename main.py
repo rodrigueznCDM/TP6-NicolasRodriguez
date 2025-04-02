@@ -86,15 +86,33 @@ class Game(arcade.Window):
         title = arcade.Text("Roche, Papier, Ciseaux", 40, 500, arcade.color.RUSTY_RED, 60)
         title.draw()
 
-        arcade.draw_lbwh_rectangle_outline(80, 100, 80, 80, arcade.color.COPPER_RED)
-        arcade.draw_lbwh_rectangle_outline(180, 100, 80, 80, arcade.color.COPPER_RED)
-        arcade.draw_lbwh_rectangle_outline(280, 100, 80, 80, arcade.color.COPPER_RED)
-        arcade.draw_lbwh_rectangle_outline(600, 100, 80, 80, arcade.color.COPPER_RED)
+        arcade.draw_lbwh_rectangle_outline(80, 100, 80, 80, arcade.color.RUSTY_RED)
+        arcade.draw_lbwh_rectangle_outline(180, 100, 80, 80, arcade.color.RUSTY_RED)
+        arcade.draw_lbwh_rectangle_outline(280, 100, 80, 80, arcade.color.RUSTY_RED)
+        arcade.draw_lbwh_rectangle_outline(600, 100, 80, 80, arcade.color.RUSTY_RED)
+
+        self.draw_icons.draw()
 
         if self.game_state.NOT_STARTED:
             insruction_text = arcade.Text("Appuyez sur 'espace' pour commencer la partie", 150, 450,
                                           arcade.color.ANTI_FLASH_WHITE, 20)
             insruction_text.draw()
+
+            self.draw_rock.draw()
+
+            self.draw_paper.draw()
+
+            self.draw_scissors.draw()
+
+        elif self.game_state.ROUND_ACTIVE:
+            if self.player_attack_type[AttackType.ROCK]:
+                self.draw_rock.draw()
+
+            elif self.player_attack_type[AttackType.PAPER]:
+                self.draw_paper.draw()
+
+            elif self.player_attack_type[AttackType.SCISSORS]:
+                self.draw_scissors.draw()
 
         elif self.game_state.ROUND_DONE:
             insruction_text = arcade.Text("Appuyez sur 'espace' pour commencer la prochaine ronde", 125, 450,
@@ -110,33 +128,15 @@ class Game(arcade.Window):
                                    arcade.color.ANTI_FLASH_WHITE, 20)
             win_text.draw()
 
-        self.draw_icons.draw()
-
-        self.draw_rock.draw()
-
-        self.draw_paper.draw()
-
-        self.draw_scissors.draw()
-
     def on_update(self, delta_time):
         """
-        Toute la logique pour déplacer les objets de votre jeu et de
-        simuler sa logique vont ici. Normalement, c'est ici que
-        vous allez invoquer la méthode "update()" sur vos listes de sprites.
-        Paramètre:
-            - delta_time : le nombre de milliseconde depuis le dernier update.
+        Opérations du Jeu
         """
+        pass
 
     def on_key_press(self, key, key_modifiers):
         """
-        Cette méthode est invoquée à chaque fois que l'usager tape une touche
-        sur le clavier.
-        Paramètres:
-            - key: la touche enfoncée
-            - key_modifiers: est-ce que l'usager appuie sur "shift" ou "ctrl" ?
-
-        Pour connaître la liste des touches possibles:
-        http://arcade.academy/arcade.key.html
+        Permet de changer de GameState
         """
         if key == arcade.key.SPACE:
             if self.game_state == self.game_state.NOT_STARTED:
@@ -146,17 +146,31 @@ class Game(arcade.Window):
                 self.game_state = self.game_state.ROUND_ACTIVE
 
             elif self.game_state == self.game_state.GAME_OVER:
+                self.player_attack_type[AttackType.ROCK] = False
+                self.player_attack_type[AttackType.PAPER] = False
+                self.player_attack_type[AttackType.SCISSORS] = False
+
                 self.game_state = self.game_state.ROUND_ACTIVE
 
     def on_mouse_press(self, x, y, button, key_modifiers):
         """
-        Méthode invoquée lorsque l'usager clique un bouton de la souris.
-        Paramètres:
-            - x, y: coordonnées où le bouton a été cliqué
-            - button: le bouton de la souris appuyé
-            - key_modifiers: est-ce que l'usager appuie sur "shift" ou "ctrl" ?
+        Permet de selectioner l'attaque
         """
-        pass
+        if self.game_state == self.game_state.ROUND_ACTIVE:
+            if self.rock.collides_with_point((x, y)):
+                self.player_attack_type[AttackType.ROCK] = True
+                self.player_attack_type[AttackType.PAPER] = False
+                self.player_attack_type[AttackType.SCISSORS] = False
+
+            if self.paper.collides_with_point((x, y)):
+                self.player_attack_type[AttackType.ROCK] = False
+                self.player_attack_type[AttackType.PAPER] = True
+                self.player_attack_type[AttackType.SCISSORS] = False
+
+            if self.scissors.collides_with_point((x, y)):
+                self.player_attack_type[AttackType.ROCK] = False
+                self.player_attack_type[AttackType.PAPER] = False
+                self.player_attack_type[AttackType.SCISSORS] = True
 
 
 def main():
