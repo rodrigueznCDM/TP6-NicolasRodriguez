@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fe1689ec-46a0-486f-8a4b-26d08a945144" name="Changes" comment="Période 5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/attack_animation.py" beforeDir="false" afterPath="$PROJECT_DIR$/attack_animation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -140,7 +141,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743015353644</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Période 5">
+      <option name="closed" value="true" />
+      <created>1743610221466</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743610221466</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -25,7 +25,6 @@ class Game(arcade.Window):
     def __init__(self, width, height, title):
         super().__init__(width, height, title)
         self.game_state = GameState
-
         self.winner = None
 
         self.player_attack_type = {
@@ -41,15 +40,15 @@ class Game(arcade.Window):
         self.draw_icons.append(self.com)
 
         self.draw_rock = arcade.SpriteList()
-        self.rock = arcade.Sprite("assets/srock.png", scale=0.7)
+        self.rock = AttackAnimation(AttackType.ROCK)
         self.draw_rock.append(self.rock)
 
         self.draw_paper = arcade.SpriteList()
-        self.paper = arcade.Sprite("assets/spaper.png", scale=0.6)
+        self.paper = AttackAnimation(AttackType.PAPER)
         self.draw_paper.append(self.paper)
 
         self.draw_scissors = arcade.SpriteList()
-        self.scissors = arcade.Sprite("assets/scissors.png", scale=0.6)
+        self.scissors = AttackAnimation(AttackType.SCISSORS)
         self.draw_scissors.append(self.scissors)
 
         self.face.center_x = 220
@@ -59,7 +58,7 @@ class Game(arcade.Window):
         self.com.center_y = 225
 
         self.rock.center_x = 130
-        self.rock.center_y = 150
+        self.rock.center_y = 140
 
         self.paper.center_x = 330
         self.paper.center_y = 140
@@ -74,7 +73,7 @@ class Game(arcade.Window):
         """
         # C'est ici que vous allez créer vos listes de sprites et vos sprites.
         # C'est aussi ici que vous charger les sons de votre jeu.
-        pass
+        self.game_state = self.game_state.NOT_STARTED
 
     def on_draw(self):
         """
@@ -132,7 +131,6 @@ class Game(arcade.Window):
         """
         Opérations du Jeu
         """
-        pass
 
     def on_key_press(self, key, key_modifiers):
         """
@@ -157,17 +155,17 @@ class Game(arcade.Window):
         Permet de selectioner l'attaque
         """
         if self.game_state == self.game_state.ROUND_ACTIVE:
-            if self.rock.collides_with_point((x, y)):
+            if self.rock.collides_with_point((130, 140)):
                 self.player_attack_type[AttackType.ROCK] = True
                 self.player_attack_type[AttackType.PAPER] = False
                 self.player_attack_type[AttackType.SCISSORS] = False
 
-            if self.paper.collides_with_point((x, y)):
+            if self.paper.collides_with_point((330, 140)):
                 self.player_attack_type[AttackType.ROCK] = False
                 self.player_attack_type[AttackType.PAPER] = True
                 self.player_attack_type[AttackType.SCISSORS] = False
 
-            if self.scissors.collides_with_point((x, y)):
+            if self.scissors.collides_with_point((330, 140)):
                 self.player_attack_type[AttackType.ROCK] = False
                 self.player_attack_type[AttackType.PAPER] = False
                 self.player_attack_type[AttackType.SCISSORS] = True
