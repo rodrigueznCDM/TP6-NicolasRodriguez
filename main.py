@@ -5,7 +5,7 @@ Description: Roche, Papier, Ciseaux
 """
 from game_state import GameState
 from attack_animation import AttackType, AttackAnimation
-from enum import Enum
+from random import randint
 
 import arcade
 
@@ -17,21 +17,27 @@ SCREEN_TITLE = "Roche, Papier, Ciseaux"
 class Game(arcade.Window):
     """
     La classe principale de l'application
-
-    NOTE: Vous pouvez effacer les méthodes que vous n'avez pas besoin.
-    Si vous en avez besoin, remplacer le mot clé "pass" par votre propre code.
     """
 
     def __init__(self, width, height, title):
         super().__init__(width, height, title)
-        self.game_state = GameState
+        self.game_state = GameState.NOT_STARTED
         self.winner = None
+        self.com_rand = None
 
         self.player_attack_type = {
             AttackType.ROCK: False,
             AttackType.PAPER: False,
             AttackType.SCISSORS: False
         }
+        self.player_attack = None
+
+        self.com_attack_type = {
+            AttackType.ROCK: False,
+            AttackType.PAPER: False,
+            AttackType.SCISSORS: False
+        }
+        self.com_attack = None
 
         self.draw_icons = arcade.SpriteList()
         self.face = arcade.Sprite("assets/faceBeard.png", scale=0.25)
@@ -68,12 +74,9 @@ class Game(arcade.Window):
 
     def setup(self):
         """
-        Configurer les variables de votre jeu ici. Il faut appeler la méthode une nouvelle
-        fois si vous recommencer une nouvelle partie.
+        Rien
         """
-        # C'est ici que vous allez créer vos listes de sprites et vos sprites.
-        # C'est aussi ici que vous charger les sons de votre jeu.
-        self.game_state = self.game_state.NOT_STARTED
+        self.com_rand = randint(0, 2)
 
     def on_draw(self):
         """
@@ -92,28 +95,38 @@ class Game(arcade.Window):
 
         self.draw_icons.draw()
 
-        if self.game_state.NOT_STARTED:
+        if self.game_state == GameState.NOT_STARTED:
             insruction_text = arcade.Text("Appuyez sur 'espace' pour commencer la partie", 150, 450,
                                           arcade.color.ANTI_FLASH_WHITE, 20)
             insruction_text.draw()
 
             self.draw_rock.draw()
-
             self.draw_paper.draw()
-
             self.draw_scissors.draw()
 
-        elif self.game_state.ROUND_ACTIVE:
+        elif self.game_state == GameState.ROUND_ACTIVE:
+            insruction_text = arcade.Text("Appuyez sur une icône pour faire une attaque!", 150, 450,
+                                          arcade.color.ANTI_FLASH_WHITE, 20)
+            insruction_text.draw()
+
             if self.player_attack_type[AttackType.ROCK]:
                 self.draw_rock.draw()
+                self.com_attack.draw()
 
             elif self.player_attack_type[AttackType.PAPER]:
                 self.draw_paper.draw()
+                self.com_attack.draw()
 
             elif self.player_attack_type[AttackType.SCISSORS]:
                 self.draw_scissors.draw()
+                self.com_attack.draw()
 
-        elif self.game_state.ROUND_DONE:
+            else:
+                self.draw_rock.draw()
+                self.draw_paper.draw()
+                self.draw_scissors.draw()
+
+        elif self.game_state == GameState.ROUND_DONE:
             insruction_text = arcade.Text("Appuyez sur 'espace' pour commencer la prochaine ronde", 125, 450,
                                           arcade.color.ANTI_FLASH_WHITE, 20)
             insruction_text.draw()
@@ -122,7 +135,7 @@ class Game(arcade.Window):
                                       arcade.color.ANTI_FLASH_WHITE, 20)
             winner_text.draw()
 
-        elif self.game_state.GAME_OVER:
+        elif self.game_state == GameState.GAME_OVER:
             win_text = arcade.Text(f"{self.winner} à gagné la partie", 100, 425,
                                    arcade.color.ANTI_FLASH_WHITE, 20)
             win_text.draw()
@@ -131,41 +144,61 @@ class Game(arcade.Window):
         """
         Opérations du Jeu
         """
+        if self.com_rand == self.com_attack_type[AttackType.ROCK]:
+            self.com_attack_type[AttackType.ROCK] = True
+            self.com_attack_type[AttackType.PAPER] = False
+            self.com_attack_type[AttackType.SCISSORS] = False
+            self.com_attack = self.draw_rock
+
+        elif self.com_rand == self.com_attack_type[AttackType.PAPER]:
+            self.com_attack_type[AttackType.ROCK] = False
+            self.com_attack_type[AttackType.PAPER] = True
+            self.com_attack_type[AttackType.SCISSORS] = False
+            self.com_attack = self.draw_paper
+
+        elif self.com_rand == self.com_attack_type[AttackType.SCISSORS]:
+            self.com_attack_type[AttackType.ROCK] = False
+            self.com_attack_type[AttackType.PAPER] = False
+            self.com_attack_type[AttackType.SCISSORS] = True
+            self.com_attack = self.draw_scissors
+
+        if self.player_attack_type == self.player_attack_type[AttackType.ROCK]:
+            pass
 
     def on_key_press(self, key, key_modifiers):
         """
         Permet de changer de GameState
         """
         if key == arcade.key.SPACE:
-            if self.game_state == self.game_state.NOT_STARTED:
-                self.game_state = self.game_state.ROUND_ACTIVE
+            if self.game_state == GameState.NOT_STARTED:
+                self.game_state = GameState.ROUND_ACTIVE
 
-            elif self.game_state == self.game_state.ROUND_DONE:
-                self.game_state = self.game_state.ROUND_ACTIVE
+            elif self.game_state == GameState.ROUND_DONE:
+                self.game_state = GameState.ROUND_ACTIVE
 
-            elif self.game_state == self.game_state.GAME_OVER:
+            elif self.game_state == GameState.GAME_OVER:
                 self.player_attack_type[AttackType.ROCK] = False
                 self.player_attack_type[AttackType.PAPER] = False
                 self.player_attack_type[AttackType.SCISSORS] = False
-
-                self.game_state = self.game_state.ROUND_ACTIVE
+                self.game_state = GameState.ROUND_ACTIVE
+                self.setup()
 
     def on_mouse_press(self, x, y, button, key_modifiers):
         """
         Permet de selectioner l'attaque
         """
-        if self.game_state == self.game_state.ROUND_ACTIVE:
-            if self.rock.collides_with_point((130, 140)):
+        if self.game_state == GameState.ROUND_ACTIVE:
+            if self.rock.collides_with_point((x, y)):
                 self.player_attack_type[AttackType.ROCK] = True
                 self.player_attack_type[AttackType.PAPER] = False
                 self.player_attack_type[AttackType.SCISSORS] = False
 
-            if self.paper.collides_with_point((330, 140)):
+            elif self.paper.collides_with_point((x, y)):
                 self.player_attack_type[AttackType.ROCK] = False
                 self.player_attack_type[AttackType.PAPER] = True
                 self.player_attack_type[AttackType.SCISSORS] = False
 
-            if self.scissors.collides_with_point((330, 140)):
+            elif self.scissors.collides_with_point((x, y)):
                 self.player_attack_type[AttackType.ROCK] = False
                 self.player_attack_type[AttackType.PAPER] = False
                 self.player_attack_type[AttackType.SCISSORS] = True
