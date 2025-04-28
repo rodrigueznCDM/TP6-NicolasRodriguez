@@ -26,7 +26,7 @@ class AttackAnimation(arcade.Sprite):
                 arcade.load_texture("assets/spaper.png"),
                 arcade.load_texture("assets/spaper-attack.png"),
             ]
-        else:
+        elif self.attack_type == AttackType.SCISSORS:
             self.textures = [
                 arcade.load_texture("assets/scissors.png"),
                 arcade.load_texture("assets/scissors-close.png"),
