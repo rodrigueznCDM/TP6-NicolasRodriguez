@@ -6,7 +6,6 @@ Description: Jeu de Roche, Papier, Ciseaux
 from game_state import GameState
 from attack_animation import AttackType, AttackAnimation
 from random import randint
-import time
 
 import arcade
 
